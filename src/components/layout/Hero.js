@@ -6,11 +6,11 @@ const Hero = () => {
   return (
     <section className='hero'>
       <div className='py-12'>
-        <h1 className='text-4xl font-semibold'>
+        <h1 className='text-4xl font-semibold leading-normal'>
           Everything <br /> is better with <br /> a&nbsp;
           <span className='text-primary'>Pizza</span>
         </h1>
-        <p className='my-4 text-gray-500 text-sm'>
+        <p className='my-6 text-gray-500 text-sm'>
           Pizza is missing piece that makes every day complete, a simple yet
           delicious joy in life
         </p>
