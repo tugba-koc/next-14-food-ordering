@@ -72,22 +72,22 @@ const RegisterPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type='submit'>Register</button>
-        <div className='my-4 text-center text-gray-500'>
-          or Login with provider
-        </div>
-        <button
-          className='flex gap-4 justify-center'
-          onClick={() => signIn('google', { callbackUrl: '/' })}
-        >
-          <Image src='/google.jpg' alt='google' width={24} height={24} />
-          Login with Google
-        </button>
-        <div className='text-center my-4'>
-          <Link className='text-gray-500 underline' href='/login'>
-            Already have an account? Login here
-          </Link>
-        </div>
       </form>
+      <div className='my-4 text-center text-gray-500'>
+        or Login with provider
+      </div>
+      <button
+        className='mx-auto max-w-xs flex gap-4 justify-center'
+        onClick={() => signIn('google', { callbackUrl: '/' })}
+      >
+        <Image src='/google.jpg' alt='google' width={24} height={24} />
+        Login with Google
+      </button>
+      <div className='text-center my-4'>
+        <Link className='text-gray-500 underline' href='/login'>
+          Already have an account? Login here
+        </Link>
+      </div>
     </section>
   );
 };

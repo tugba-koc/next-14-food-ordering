@@ -5,6 +5,13 @@ import Link from 'next/link';
 const Header = () => {
   const session = useSession();
   const authenticationStatus = session.status;
+  let userName;
+
+  if (authenticationStatus === 'authenticated' && session.data.user.name) {
+    if (session.data.user.name.includes(' ')) {
+      userName = session.data.user.name.split(' ')[0];
+    }
+  }
 
   return (
     <header className='flex items-center justify-between'>
@@ -19,12 +26,17 @@ const Header = () => {
       </nav>
       <nav className='flex items-center gap-4 font-semibold text-gray-500'>
         {authenticationStatus === 'authenticated' ? (
-          <button
-            onClick={() => signOut()}
-            className='bg-primary rounded-full text-white px-4 py-2'
-          >
-            logout
-          </button>
+          <>
+            <Link className='whitespace-nowrap' href='/profile'>
+              {userName ? 'Hello ' + userName : 'Profile'}
+            </Link>
+            <button
+              onClick={() => signOut()}
+              className='bg-primary rounded-full text-white px-4 py-2'
+            >
+              logout
+            </button>
+          </>
         ) : (
           <>
             <Link href='/login'>Login</Link>
