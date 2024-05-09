@@ -21,7 +21,7 @@ const UserSchema = new Schema(
       required: true,
       minlength: 5,
       maxlength: 1024,
-      /*       validate: {
+      validate: {
         validator: function (v) {
           return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/.test(
             v
@@ -29,7 +29,7 @@ const UserSchema = new Schema(
         },
         message: (props) =>
           `${props.value} is not a valid password! Passwords must be at least 5 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.`,
-      }, */
+      },
     },
   },
   { timestamps: true }
